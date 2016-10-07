@@ -34,6 +34,7 @@
             this.openButton = new System.Windows.Forms.Button();
             this.cancelButton = new System.Windows.Forms.Button();
             this.fileList = new System.Windows.Forms.ListBox();
+            this.backButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // workingDirectory
@@ -43,16 +44,16 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.workingDirectory.Location = new System.Drawing.Point(13, 13);
             this.workingDirectory.Name = "workingDirectory";
-            this.workingDirectory.Size = new System.Drawing.Size(178, 20);
+            this.workingDirectory.Size = new System.Drawing.Size(188, 20);
             this.workingDirectory.TabIndex = 0;
             // 
             // navButton
             // 
-            this.navButton.Location = new System.Drawing.Point(197, 13);
+            this.navButton.Location = new System.Drawing.Point(244, 13);
             this.navButton.Name = "navButton";
-            this.navButton.Size = new System.Drawing.Size(75, 23);
+            this.navButton.Size = new System.Drawing.Size(28, 23);
             this.navButton.TabIndex = 1;
-            this.navButton.Text = "Navigera";
+            this.navButton.Text = "-->";
             this.navButton.UseVisualStyleBackColor = true;
             this.navButton.Click += new System.EventHandler(this.navButton_Click);
             // 
@@ -66,6 +67,7 @@
             this.folderList.Name = "folderList";
             this.folderList.Size = new System.Drawing.Size(118, 173);
             this.folderList.TabIndex = 2;
+            this.folderList.SelectedIndexChanged += new System.EventHandler(this.folderList_SelectedIndexChanged);
             // 
             // openButton
             // 
@@ -75,6 +77,7 @@
             this.openButton.TabIndex = 3;
             this.openButton.Text = "Öppna";
             this.openButton.UseVisualStyleBackColor = true;
+            this.openButton.Click += new System.EventHandler(this.openButton_Click);
             // 
             // cancelButton
             // 
@@ -96,12 +99,24 @@
             this.fileList.Name = "fileList";
             this.fileList.Size = new System.Drawing.Size(135, 173);
             this.fileList.TabIndex = 5;
+            this.fileList.SelectedIndexChanged += new System.EventHandler(this.fileList_SelectedIndexChanged);
+            // 
+            // backButton
+            // 
+            this.backButton.Location = new System.Drawing.Point(207, 13);
+            this.backButton.Name = "backButton";
+            this.backButton.Size = new System.Drawing.Size(31, 23);
+            this.backButton.TabIndex = 6;
+            this.backButton.Text = "<--";
+            this.backButton.UseVisualStyleBackColor = true;
+            this.backButton.Click += new System.EventHandler(this.backButton_Click);
             // 
             // OpenFile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 261);
+            this.Controls.Add(this.backButton);
             this.Controls.Add(this.fileList);
             this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.openButton);
@@ -123,5 +138,6 @@
         private System.Windows.Forms.Button openButton;
         private System.Windows.Forms.Button cancelButton;
         private System.Windows.Forms.ListBox fileList;
+        private System.Windows.Forms.Button backButton;
     }
 }
