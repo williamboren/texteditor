@@ -28,12 +28,185 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.searchField = new System.Windows.Forms.TextBox();
+            this.replaceField = new System.Windows.Forms.TextBox();
+            this.searchButton = new System.Windows.Forms.Button();
+            this.replaceButton = new System.Windows.Forms.Button();
+            this.saveAsButton = new System.Windows.Forms.Button();
+            this.saveButton = new System.Windows.Forms.Button();
+            this.openButton = new System.Windows.Forms.Button();
+            this.newButton = new System.Windows.Forms.Button();
+            this.chooseFontButton = new System.Windows.Forms.Button();
+            this.chooseColorButton = new System.Windows.Forms.Button();
+            this.exitButton = new System.Windows.Forms.Button();
+            this.randomButton = new System.Windows.Forms.Button();
+            this.chooseFontSizeButton = new System.Windows.Forms.Button();
+            this.SuspendLayout();
+            // 
+            // richTextBox1
+            // 
+            this.richTextBox1.Location = new System.Drawing.Point(12, 44);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(1036, 620);
+            this.richTextBox1.TabIndex = 0;
+            this.richTextBox1.Text = "";
+            // 
+            // searchField
+            // 
+            this.searchField.Location = new System.Drawing.Point(13, 670);
+            this.searchField.Name = "searchField";
+            this.searchField.Size = new System.Drawing.Size(100, 20);
+            this.searchField.TabIndex = 1;
+            // 
+            // replaceField
+            // 
+            this.replaceField.Location = new System.Drawing.Point(171, 670);
+            this.replaceField.Name = "replaceField";
+            this.replaceField.Size = new System.Drawing.Size(100, 20);
+            this.replaceField.TabIndex = 2;
+            // 
+            // searchButton
+            // 
+            this.searchButton.Location = new System.Drawing.Point(119, 667);
+            this.searchButton.Name = "searchButton";
+            this.searchButton.Size = new System.Drawing.Size(46, 23);
+            this.searchButton.TabIndex = 3;
+            this.searchButton.Text = "Sök";
+            this.searchButton.UseVisualStyleBackColor = true;
+            // 
+            // replaceButton
+            // 
+            this.replaceButton.Location = new System.Drawing.Point(277, 668);
+            this.replaceButton.Name = "replaceButton";
+            this.replaceButton.Size = new System.Drawing.Size(42, 23);
+            this.replaceButton.TabIndex = 4;
+            this.replaceButton.Text = "Ersätt";
+            this.replaceButton.UseVisualStyleBackColor = true;
+            // 
+            // saveAsButton
+            // 
+            this.saveAsButton.Location = new System.Drawing.Point(179, 12);
+            this.saveAsButton.Name = "saveAsButton";
+            this.saveAsButton.Size = new System.Drawing.Size(67, 23);
+            this.saveAsButton.TabIndex = 5;
+            this.saveAsButton.Text = "Spara Som";
+            this.saveAsButton.UseVisualStyleBackColor = true;
+            // 
+            // saveButton
+            // 
+            this.saveButton.Location = new System.Drawing.Point(128, 12);
+            this.saveButton.Name = "saveButton";
+            this.saveButton.Size = new System.Drawing.Size(45, 23);
+            this.saveButton.TabIndex = 6;
+            this.saveButton.Text = "Spara";
+            this.saveButton.UseVisualStyleBackColor = true;
+            // 
+            // openButton
+            // 
+            this.openButton.Location = new System.Drawing.Point(66, 12);
+            this.openButton.Name = "openButton";
+            this.openButton.Size = new System.Drawing.Size(56, 23);
+            this.openButton.TabIndex = 7;
+            this.openButton.Text = "Öppna";
+            this.openButton.UseVisualStyleBackColor = true;
+            // 
+            // newButton
+            // 
+            this.newButton.Location = new System.Drawing.Point(13, 12);
+            this.newButton.Name = "newButton";
+            this.newButton.Size = new System.Drawing.Size(47, 23);
+            this.newButton.TabIndex = 8;
+            this.newButton.Text = "Nytt";
+            this.newButton.UseVisualStyleBackColor = true;
+            // 
+            // chooseFontButton
+            // 
+            this.chooseFontButton.Location = new System.Drawing.Point(889, 12);
+            this.chooseFontButton.Name = "chooseFontButton";
+            this.chooseFontButton.Size = new System.Drawing.Size(53, 23);
+            this.chooseFontButton.TabIndex = 9;
+            this.chooseFontButton.Text = "Typsnitt";
+            this.chooseFontButton.UseVisualStyleBackColor = true;
+            // 
+            // chooseColorButton
+            // 
+            this.chooseColorButton.Location = new System.Drawing.Point(948, 12);
+            this.chooseColorButton.Name = "chooseColorButton";
+            this.chooseColorButton.Size = new System.Drawing.Size(42, 23);
+            this.chooseColorButton.TabIndex = 10;
+            this.chooseColorButton.Text = "Färg";
+            this.chooseColorButton.UseVisualStyleBackColor = true;
+            // 
+            // exitButton
+            // 
+            this.exitButton.Location = new System.Drawing.Point(996, 12);
+            this.exitButton.Name = "exitButton";
+            this.exitButton.Size = new System.Drawing.Size(52, 23);
+            this.exitButton.TabIndex = 11;
+            this.exitButton.Text = "Avsluta";
+            this.exitButton.UseVisualStyleBackColor = true;
+            // 
+            // randomButton
+            // 
+            this.randomButton.Location = new System.Drawing.Point(252, 12);
+            this.randomButton.Name = "randomButton";
+            this.randomButton.Size = new System.Drawing.Size(47, 23);
+            this.randomButton.TabIndex = 12;
+            this.randomButton.Text = "RNG";
+            this.randomButton.UseVisualStyleBackColor = true;
+            // 
+            // chooseFontSizeButton
+            // 
+            this.chooseFontSizeButton.Location = new System.Drawing.Point(794, 12);
+            this.chooseFontSizeButton.Name = "chooseFontSizeButton";
+            this.chooseFontSizeButton.Size = new System.Drawing.Size(89, 23);
+            this.chooseFontSizeButton.TabIndex = 14;
+            this.chooseFontSizeButton.Text = "Typsnitt Storlek";
+            this.chooseFontSizeButton.UseVisualStyleBackColor = true;
+            // 
+            // Form1
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(1060, 702);
+            this.Controls.Add(this.chooseFontSizeButton);
+            this.Controls.Add(this.randomButton);
+            this.Controls.Add(this.exitButton);
+            this.Controls.Add(this.chooseColorButton);
+            this.Controls.Add(this.chooseFontButton);
+            this.Controls.Add(this.newButton);
+            this.Controls.Add(this.openButton);
+            this.Controls.Add(this.saveButton);
+            this.Controls.Add(this.saveAsButton);
+            this.Controls.Add(this.replaceButton);
+            this.Controls.Add(this.searchButton);
+            this.Controls.Add(this.replaceField);
+            this.Controls.Add(this.searchField);
+            this.Controls.Add(this.richTextBox1);
+            this.Name = "Form1";
             this.Text = "Form1";
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
+
+        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.TextBox searchField;
+        private System.Windows.Forms.TextBox replaceField;
+        private System.Windows.Forms.Button searchButton;
+        private System.Windows.Forms.Button replaceButton;
+        private System.Windows.Forms.Button saveAsButton;
+        private System.Windows.Forms.Button saveButton;
+        private System.Windows.Forms.Button openButton;
+        private System.Windows.Forms.Button newButton;
+        private System.Windows.Forms.Button chooseFontButton;
+        private System.Windows.Forms.Button chooseColorButton;
+        private System.Windows.Forms.Button exitButton;
+        private System.Windows.Forms.Button randomButton;
+        private System.Windows.Forms.Button chooseFontSizeButton;
     }
 }
 
