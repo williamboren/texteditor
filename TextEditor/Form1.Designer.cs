@@ -56,6 +56,7 @@
             // 
             // searchField
             // 
+            this.searchField.Enabled = false;
             this.searchField.Location = new System.Drawing.Point(13, 670);
             this.searchField.Name = "searchField";
             this.searchField.Size = new System.Drawing.Size(100, 20);
@@ -63,6 +64,7 @@
             // 
             // replaceField
             // 
+            this.replaceField.Enabled = false;
             this.replaceField.Location = new System.Drawing.Point(171, 670);
             this.replaceField.Name = "replaceField";
             this.replaceField.Size = new System.Drawing.Size(100, 20);
@@ -70,6 +72,7 @@
             // 
             // searchButton
             // 
+            this.searchButton.Enabled = false;
             this.searchButton.Location = new System.Drawing.Point(119, 667);
             this.searchButton.Name = "searchButton";
             this.searchButton.Size = new System.Drawing.Size(46, 23);
@@ -79,6 +82,7 @@
             // 
             // replaceButton
             // 
+            this.replaceButton.Enabled = false;
             this.replaceButton.Location = new System.Drawing.Point(277, 668);
             this.replaceButton.Name = "replaceButton";
             this.replaceButton.Size = new System.Drawing.Size(42, 23);
@@ -152,6 +156,7 @@
             this.exitButton.TabIndex = 11;
             this.exitButton.Text = "Avsluta";
             this.exitButton.UseVisualStyleBackColor = true;
+            this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
             // 
             // randomButton
             // 
@@ -192,6 +197,7 @@
             this.Controls.Add(this.richTextBox1);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 

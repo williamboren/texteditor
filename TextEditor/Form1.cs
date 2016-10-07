@@ -134,5 +134,61 @@ namespace TextEditor
             this.Text = "Ny Fil";
             richTextBox1.Enabled = true;
         }
+
+        private void exitButton_Click(object sender, EventArgs e)
+        {
+            if (!isFileSaved) OnClose();
+            else this.Close();
+        }
+
+        private void OnClose()
+        {
+            DialogResult res = MessageBox.Show("Spara?", "Warning", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning);
+            if (res == DialogResult.Yes)
+            {
+                if (!isFileSaved && (openedFileName != String.Empty || openedFileName != null))
+                {
+                    try
+                    {
+                        var ext = Path.GetExtension(openedFileName);
+                        richTextBox1.SaveFile(openedFileName, ext == ".txt" ? RichTextBoxStreamType.PlainText : RichTextBoxStreamType.RichText);
+                        // one line magic :D (maybe use if/elseif/else to handle other filetypes?)
+                        isFileSaved = true;
+                        this.Text = this.Text.Trim('*');
+                        richTextBox1.Enabled = true;
+                    }
+                    catch (IOException ex)
+                    {
+                        MessageBox.Show(ex.Message, "Error");
+                    }
+                }
+                else if (!isFileSaved)
+                {
+                    saveDiag = new SaveFile();
+                    saveDiag.Show();
+
+                    // bind an event listner
+                    saveDiag.FileNameSelected += saveFileAs;
+                }
+                isFileSaved = true;
+                MessageBox.Show("Sparat.", "Warning");
+            }
+            else if (res == DialogResult.No)
+            {
+                isFileSaved = true;
+            }
+
+            this.Close();
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (!isFileSaved)
+            {
+                e.Cancel = true;
+                OnClose();
+            }
+            else e.Cancel = false;
+        }
     }
 }
