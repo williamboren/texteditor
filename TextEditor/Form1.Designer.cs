@@ -110,6 +110,7 @@
             this.openButton.TabIndex = 7;
             this.openButton.Text = "Öppna";
             this.openButton.UseVisualStyleBackColor = true;
+            this.openButton.Click += new System.EventHandler(this.openButton_Click);
             // 
             // newButton
             // 
