@@ -46,11 +46,13 @@
             // 
             // richTextBox1
             // 
+            this.richTextBox1.Enabled = false;
             this.richTextBox1.Location = new System.Drawing.Point(12, 44);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.Size = new System.Drawing.Size(1036, 620);
             this.richTextBox1.TabIndex = 0;
             this.richTextBox1.Text = "";
+            this.richTextBox1.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
             // 
             // searchField
             // 
@@ -92,6 +94,7 @@
             this.saveAsButton.TabIndex = 5;
             this.saveAsButton.Text = "Spara Som";
             this.saveAsButton.UseVisualStyleBackColor = true;
+            this.saveAsButton.Click += new System.EventHandler(this.saveAsButton_Click);
             // 
             // saveButton
             // 
@@ -101,6 +104,7 @@
             this.saveButton.TabIndex = 6;
             this.saveButton.Text = "Spara";
             this.saveButton.UseVisualStyleBackColor = true;
+            this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
             // 
             // openButton
             // 
@@ -120,6 +124,7 @@
             this.newButton.TabIndex = 8;
             this.newButton.Text = "Nytt";
             this.newButton.UseVisualStyleBackColor = true;
+            this.newButton.Click += new System.EventHandler(this.newButton_Click);
             // 
             // chooseFontButton
             // 
@@ -159,11 +164,11 @@
             // 
             // chooseFontSizeButton
             // 
-            this.chooseFontSizeButton.Location = new System.Drawing.Point(794, 12);
+            this.chooseFontSizeButton.Location = new System.Drawing.Point(810, 12);
             this.chooseFontSizeButton.Name = "chooseFontSizeButton";
-            this.chooseFontSizeButton.Size = new System.Drawing.Size(89, 23);
+            this.chooseFontSizeButton.Size = new System.Drawing.Size(73, 23);
             this.chooseFontSizeButton.TabIndex = 14;
-            this.chooseFontSizeButton.Text = "Typsnitt Storlek";
+            this.chooseFontSizeButton.Text = "Text Storlek";
             this.chooseFontSizeButton.UseVisualStyleBackColor = true;
             // 
             // Form1
