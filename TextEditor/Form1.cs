@@ -16,6 +16,7 @@ namespace TextEditor
         public Form1()
         {
             InitializeComponent();
+            // set the title of the program
             this.Text = "[Insert name]";
         }
 
@@ -50,6 +51,10 @@ namespace TextEditor
             {
                 MessageBox.Show(ex.Message, "Error");
             }
+            catch (ArgumentException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void richTextBox1_TextChanged(object sender, EventArgs e)
@@ -76,6 +81,11 @@ namespace TextEditor
                 catch (IOException ex)
                 {
                     MessageBox.Show(ex.Message, "Error");
+                }
+
+                catch (ArgumentException ex)
+                {
+                    MessageBox.Show(ex.Message);
                 }
             }
             else if (isFileSaved && (openedFileName != null || openedFileName != String.Empty))
@@ -107,6 +117,10 @@ namespace TextEditor
             catch (IOException ex)
             {
                 MessageBox.Show(ex.Message, "Error");
+            }
+            catch (ArgumentException ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
 
@@ -161,6 +175,10 @@ namespace TextEditor
                     {
                         MessageBox.Show(ex.Message, "Error");
                     }
+                    catch (ArgumentException ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
                 }
                 else if (!isFileSaved)
                 {
@@ -189,6 +207,46 @@ namespace TextEditor
                 OnClose();
             }
             else e.Cancel = false;
+        }
+
+        private void chooseFontButton_Click(object sender, EventArgs e)
+        {
+            // show the font diaglog and wait for the result
+            if (fontDialog1.ShowDialog() == DialogResult.OK)
+            {
+                // if the user have selected text before pressing the button, apply the font to the selected text
+                if (richTextBox1.SelectedText != String.Empty || richTextBox1.SelectedRtf != String.Empty)
+                {
+                    richTextBox1.SelectionFont = fontDialog1.Font;
+                }
+                // else apply it to all the text in the document
+                else
+                {
+                    richTextBox1.Font = fontDialog1.Font;
+                }
+            }
+        }
+
+        private void chooseFontSizeButton_Click(object sender, EventArgs e)
+        {
+            // Hmm, richTextBox1.Font.Size is get only... How do I solve this??
+        }
+
+        private void chooseColorButton_Click(object sender, EventArgs e)
+        {
+            if (colorDialog1.ShowDialog() == DialogResult.OK)
+            {
+                // if the user have selected text before pressing the button, apply the color to the selected text
+                if (richTextBox1.SelectedText != String.Empty || richTextBox1.SelectedRtf != String.Empty)
+                {
+                    richTextBox1.SelectionColor = colorDialog1.Color;
+                }
+                // else apply it to all the text in the document
+                else
+                {
+                    richTextBox1.ForeColor = colorDialog1.Color;
+                }
+            }
         }
     }
 }

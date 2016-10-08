@@ -42,10 +42,13 @@
             this.exitButton = new System.Windows.Forms.Button();
             this.randomButton = new System.Windows.Forms.Button();
             this.chooseFontSizeButton = new System.Windows.Forms.Button();
+            this.colorDialog1 = new System.Windows.Forms.ColorDialog();
+            this.fontDialog1 = new System.Windows.Forms.FontDialog();
             this.SuspendLayout();
             // 
             // richTextBox1
             // 
+            this.richTextBox1.AcceptsTab = true;
             this.richTextBox1.Enabled = false;
             this.richTextBox1.Location = new System.Drawing.Point(12, 44);
             this.richTextBox1.Name = "richTextBox1";
@@ -138,6 +141,7 @@
             this.chooseFontButton.TabIndex = 9;
             this.chooseFontButton.Text = "Typsnitt";
             this.chooseFontButton.UseVisualStyleBackColor = true;
+            this.chooseFontButton.Click += new System.EventHandler(this.chooseFontButton_Click);
             // 
             // chooseColorButton
             // 
@@ -147,6 +151,7 @@
             this.chooseColorButton.TabIndex = 10;
             this.chooseColorButton.Text = "Färg";
             this.chooseColorButton.UseVisualStyleBackColor = true;
+            this.chooseColorButton.Click += new System.EventHandler(this.chooseColorButton_Click);
             // 
             // exitButton
             // 
@@ -175,6 +180,7 @@
             this.chooseFontSizeButton.TabIndex = 14;
             this.chooseFontSizeButton.Text = "Text Storlek";
             this.chooseFontSizeButton.UseVisualStyleBackColor = true;
+            this.chooseFontSizeButton.Click += new System.EventHandler(this.chooseFontSizeButton_Click);
             // 
             // Form1
             // 
@@ -219,6 +225,8 @@
         private System.Windows.Forms.Button exitButton;
         private System.Windows.Forms.Button randomButton;
         private System.Windows.Forms.Button chooseFontSizeButton;
+        private System.Windows.Forms.ColorDialog colorDialog1;
+        private System.Windows.Forms.FontDialog fontDialog1;
     }
 }
 
