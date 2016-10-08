@@ -69,7 +69,7 @@ namespace TextEditor
 
         private void saveButton_Click(object sender, EventArgs e)
         {
-            if (fileNameField.Text != String.Empty || fileNameField.Text != null)
+            if (fileNameField.MaxLength > 0)
             {
                 SelectedFileName = navField.Text + Path.DirectorySeparatorChar + fileNameField.Text;
                 // Raise the event

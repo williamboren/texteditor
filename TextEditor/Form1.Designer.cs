@@ -49,10 +49,11 @@
             // richTextBox1
             // 
             this.richTextBox1.AcceptsTab = true;
+            this.richTextBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(75)))), ((int)(((byte)(78)))));
             this.richTextBox1.Enabled = false;
-            this.richTextBox1.Location = new System.Drawing.Point(12, 44);
+            this.richTextBox1.Location = new System.Drawing.Point(-1, 41);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(1036, 620);
+            this.richTextBox1.Size = new System.Drawing.Size(1062, 621);
             this.richTextBox1.TabIndex = 0;
             this.richTextBox1.Text = "";
             this.richTextBox1.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
@@ -186,6 +187,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(119)))), ((int)(((byte)(123)))));
             this.ClientSize = new System.Drawing.Size(1060, 702);
             this.Controls.Add(this.chooseFontSizeButton);
             this.Controls.Add(this.randomButton);
@@ -201,6 +203,7 @@
             this.Controls.Add(this.replaceField);
             this.Controls.Add(this.searchField);
             this.Controls.Add(this.richTextBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form1";
             this.Text = "Form1";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);

@@ -67,7 +67,7 @@ namespace TextEditor
 
         private void saveButton_Click(object sender, EventArgs e)
         {
-            if ((openedFileName != null || openedFileName != String.Empty) && !isFileSaved)
+            if (openedFileName.Length > 0 && !isFileSaved)
             {
                 try
                 {
@@ -88,7 +88,7 @@ namespace TextEditor
                     MessageBox.Show(ex.Message);
                 }
             }
-            else if (isFileSaved && (openedFileName != null || openedFileName != String.Empty))
+            else if (isFileSaved && openedFileName.Length > 0)
             {
                 MessageBox.Show("Inga förändringar att spara.", "Warning");
             }
@@ -160,7 +160,7 @@ namespace TextEditor
             DialogResult res = MessageBox.Show("Spara?", "Warning", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning);
             if (res == DialogResult.Yes)
             {
-                if (!isFileSaved && (openedFileName != String.Empty || openedFileName != null))
+                if (!isFileSaved && openedFileName.Length > 0)
                 {
                     try
                     {
@@ -215,7 +215,7 @@ namespace TextEditor
             if (fontDialog1.ShowDialog() == DialogResult.OK)
             {
                 // if the user have selected text before pressing the button, apply the font to the selected text
-                if (richTextBox1.SelectedText != String.Empty || richTextBox1.SelectedRtf != String.Empty)
+                if (richTextBox1.SelectedText.Length > 0)
                 {
                     richTextBox1.SelectionFont = fontDialog1.Font;
                 }
@@ -237,7 +237,7 @@ namespace TextEditor
             if (colorDialog1.ShowDialog() == DialogResult.OK)
             {
                 // if the user have selected text before pressing the button, apply the color to the selected text
-                if (richTextBox1.SelectedText != String.Empty || richTextBox1.SelectedRtf != String.Empty)
+                if (richTextBox1.SelectedText.Length > 0)
                 {
                     richTextBox1.SelectionColor = colorDialog1.Color;
                 }
