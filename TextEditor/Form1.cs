@@ -1,10 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
@@ -16,8 +11,12 @@ namespace TextEditor
         public Form1()
         {
             InitializeComponent();
+
             // set the title of the program
             this.Text = "[Insert name]";
+
+            // set the default text color (stored settings might be implemented if I have time over for it)
+            richTextBox1.ForeColor = Color.WhiteSmoke;
         }
 
         bool isFileSaved = true;
@@ -67,7 +66,7 @@ namespace TextEditor
 
         private void saveButton_Click(object sender, EventArgs e)
         {
-            if ((openedFileName.Length > 0 || openedFileName != null) && !isFileSaved)
+            if ((openedFileName != null || openedFileName.Length > 0) && !isFileSaved)
             {
                 try
                 {
@@ -156,7 +155,7 @@ namespace TextEditor
 
         private void OnClose()
         {
-            DialogResult res = MessageBox.Show("Spara?", "Warning", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning);
+            DialogResult res = MessageBox.Show("Vill du spara filen?", "Warning", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning);
             if (res == DialogResult.Yes)
             {
                 if (!isFileSaved && openedFileName.Length > 0)
@@ -193,6 +192,10 @@ namespace TextEditor
             else if (res == DialogResult.No)
             {
                 isFileSaved = true;
+            }
+            else
+            {
+                return;
             }
 
             this.Close();
@@ -248,6 +251,7 @@ namespace TextEditor
             }
         }
 
+        // switch image based on mouse events
         private void saveButton_MouseEnter(object sender, EventArgs e)
         {
             saveButton.Image = Properties.Resources.saveButtonState3;
@@ -266,6 +270,58 @@ namespace TextEditor
         private void saveButton_MouseUp(object sender, MouseEventArgs e)
         {
             saveButton.Image = Properties.Resources.saveButtonState3;
+        }
+
+        private void searchButton_Click(object sender, EventArgs e)
+        {
+            // if the search field have a value
+            if (searchField.Text != null && searchField.Text.Length > 0)
+            {
+                // get the index of the first occurance of the input
+                int index = richTextBox1.Find(searchField.Text), oldIndex = -1;
+
+                // if theres is an selection already and it matches the one we're goning to create its *probably* the selection from the last search of the same word
+                // save the index in oldIndex and use (oldIndex + searchinput length) as startindex for the next search
+                if (richTextBox1.SelectionLength == searchField.TextLength && richTextBox1.Find(searchField.Text) == index)
+                {
+                    oldIndex = index;
+
+                    // stop being a bitch rtb, let me search with string + startindex without searchoptions
+                    // initiate a new char array and add each letter in the searchinput to it
+                    char[] search = new char[searchField.TextLength];
+
+                    for (int i = 0; i < searchField.TextLength; i++)
+                    {
+                        search[i] = searchField.Text[i];
+                    }
+
+                    index = richTextBox1.Find(search, oldIndex + searchField.Text.Length);
+                }
+
+                if (index >= 0)
+                {
+                    richTextBox1.Select(index, searchField.TextLength);
+                    richTextBox1.SelectionBackColor = Color.BlueViolet;
+                }
+            }
+        }
+
+        private void replaceButton_Click(object sender, EventArgs e)
+        {
+            // if both fields have a value
+            if ((searchField.Text != null && searchField.Text.Length > 0) && (replaceField.Text != null && replaceField.Text.Length > 0))
+            {
+                // find the index of the first char
+                int index = richTextBox1.Find(searchField.Text);
+
+                if (index >= 0)
+                {
+                    // select the text from starting index to the length of the searchterm
+                    richTextBox1.Select(index, searchField.TextLength);
+                    // replace it with the value from the replace field
+                    richTextBox1.SelectedText = replaceField.Text;
+                }
+            }
         }
     }
 }
