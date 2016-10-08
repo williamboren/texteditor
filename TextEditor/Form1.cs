@@ -67,7 +67,7 @@ namespace TextEditor
 
         private void saveButton_Click(object sender, EventArgs e)
         {
-            if (openedFileName.Length > 0 && !isFileSaved)
+            if ((openedFileName.Length > 0 || openedFileName != null) && !isFileSaved)
             {
                 try
                 {
@@ -82,7 +82,6 @@ namespace TextEditor
                 {
                     MessageBox.Show(ex.Message, "Error");
                 }
-
                 catch (ArgumentException ex)
                 {
                     MessageBox.Show(ex.Message);
@@ -247,6 +246,26 @@ namespace TextEditor
                     richTextBox1.ForeColor = colorDialog1.Color;
                 }
             }
+        }
+
+        private void saveButton_MouseEnter(object sender, EventArgs e)
+        {
+            saveButton.Image = Properties.Resources.saveButtonState3;
+        }
+
+        private void saveButton_MouseLeave(object sender, EventArgs e)
+        {
+            saveButton.Image = Properties.Resources.saveButtonState2;
+        }
+
+        private void saveButton_MouseDown(object sender, MouseEventArgs e)
+        {
+            saveButton.Image = Properties.Resources.saveButtonState1;
+        }
+
+        private void saveButton_MouseUp(object sender, MouseEventArgs e)
+        {
+            saveButton.Image = Properties.Resources.saveButtonState3;
         }
     }
 }

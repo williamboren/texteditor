@@ -34,7 +34,6 @@
             this.searchButton = new System.Windows.Forms.Button();
             this.replaceButton = new System.Windows.Forms.Button();
             this.saveAsButton = new System.Windows.Forms.Button();
-            this.saveButton = new System.Windows.Forms.Button();
             this.openButton = new System.Windows.Forms.Button();
             this.newButton = new System.Windows.Forms.Button();
             this.chooseFontButton = new System.Windows.Forms.Button();
@@ -44,6 +43,8 @@
             this.chooseFontSizeButton = new System.Windows.Forms.Button();
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             this.fontDialog1 = new System.Windows.Forms.FontDialog();
+            this.saveButton = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.saveButton)).BeginInit();
             this.SuspendLayout();
             // 
             // richTextBox1
@@ -103,16 +104,6 @@
             this.saveAsButton.Text = "Spara Som";
             this.saveAsButton.UseVisualStyleBackColor = true;
             this.saveAsButton.Click += new System.EventHandler(this.saveAsButton_Click);
-            // 
-            // saveButton
-            // 
-            this.saveButton.Location = new System.Drawing.Point(128, 12);
-            this.saveButton.Name = "saveButton";
-            this.saveButton.Size = new System.Drawing.Size(45, 23);
-            this.saveButton.TabIndex = 6;
-            this.saveButton.Text = "Spara";
-            this.saveButton.UseVisualStyleBackColor = true;
-            this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
             // 
             // openButton
             // 
@@ -183,12 +174,28 @@
             this.chooseFontSizeButton.UseVisualStyleBackColor = true;
             this.chooseFontSizeButton.Click += new System.EventHandler(this.chooseFontSizeButton_Click);
             // 
+            // saveButton
+            // 
+            this.saveButton.Image = global::TextEditor.Properties.Resources.saveButtonState2;
+            this.saveButton.Location = new System.Drawing.Point(128, 3);
+            this.saveButton.Name = "saveButton";
+            this.saveButton.Size = new System.Drawing.Size(43, 32);
+            this.saveButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.saveButton.TabIndex = 15;
+            this.saveButton.TabStop = false;
+            this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
+            this.saveButton.MouseDown += new System.Windows.Forms.MouseEventHandler(this.saveButton_MouseDown);
+            this.saveButton.MouseEnter += new System.EventHandler(this.saveButton_MouseEnter);
+            this.saveButton.MouseLeave += new System.EventHandler(this.saveButton_MouseLeave);
+            this.saveButton.MouseUp += new System.Windows.Forms.MouseEventHandler(this.saveButton_MouseUp);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(119)))), ((int)(((byte)(123)))));
             this.ClientSize = new System.Drawing.Size(1060, 702);
+            this.Controls.Add(this.saveButton);
             this.Controls.Add(this.chooseFontSizeButton);
             this.Controls.Add(this.randomButton);
             this.Controls.Add(this.exitButton);
@@ -196,7 +203,6 @@
             this.Controls.Add(this.chooseFontButton);
             this.Controls.Add(this.newButton);
             this.Controls.Add(this.openButton);
-            this.Controls.Add(this.saveButton);
             this.Controls.Add(this.saveAsButton);
             this.Controls.Add(this.replaceButton);
             this.Controls.Add(this.searchButton);
@@ -207,6 +213,7 @@
             this.Name = "Form1";
             this.Text = "Form1";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
+            ((System.ComponentModel.ISupportInitialize)(this.saveButton)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -220,7 +227,6 @@
         private System.Windows.Forms.Button searchButton;
         private System.Windows.Forms.Button replaceButton;
         private System.Windows.Forms.Button saveAsButton;
-        private System.Windows.Forms.Button saveButton;
         private System.Windows.Forms.Button openButton;
         private System.Windows.Forms.Button newButton;
         private System.Windows.Forms.Button chooseFontButton;
@@ -230,6 +236,7 @@
         private System.Windows.Forms.Button chooseFontSizeButton;
         private System.Windows.Forms.ColorDialog colorDialog1;
         private System.Windows.Forms.FontDialog fontDialog1;
+        private System.Windows.Forms.PictureBox saveButton;
     }
 }
 
