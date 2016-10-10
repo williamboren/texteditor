@@ -61,7 +61,8 @@
             // 
             // searchField
             // 
-            this.searchField.Enabled = false;
+            this.searchField.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(75)))), ((int)(((byte)(78)))));
+            this.searchField.ForeColor = System.Drawing.Color.White;
             this.searchField.Location = new System.Drawing.Point(13, 670);
             this.searchField.Name = "searchField";
             this.searchField.Size = new System.Drawing.Size(100, 20);
@@ -69,7 +70,8 @@
             // 
             // replaceField
             // 
-            this.replaceField.Enabled = false;
+            this.replaceField.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(75)))), ((int)(((byte)(78)))));
+            this.replaceField.ForeColor = System.Drawing.Color.White;
             this.replaceField.Location = new System.Drawing.Point(171, 670);
             this.replaceField.Name = "replaceField";
             this.replaceField.Size = new System.Drawing.Size(100, 20);
@@ -77,23 +79,23 @@
             // 
             // searchButton
             // 
-            this.searchButton.Enabled = false;
             this.searchButton.Location = new System.Drawing.Point(119, 667);
             this.searchButton.Name = "searchButton";
             this.searchButton.Size = new System.Drawing.Size(46, 23);
             this.searchButton.TabIndex = 3;
             this.searchButton.Text = "Sök";
             this.searchButton.UseVisualStyleBackColor = true;
+            this.searchButton.Click += new System.EventHandler(this.searchButton_Click);
             // 
             // replaceButton
             // 
-            this.replaceButton.Enabled = false;
             this.replaceButton.Location = new System.Drawing.Point(277, 668);
             this.replaceButton.Name = "replaceButton";
             this.replaceButton.Size = new System.Drawing.Size(42, 23);
             this.replaceButton.TabIndex = 4;
             this.replaceButton.Text = "Ersätt";
             this.replaceButton.UseVisualStyleBackColor = true;
+            this.replaceButton.Click += new System.EventHandler(this.replaceButton_Click);
             // 
             // saveAsButton
             // 
@@ -209,7 +211,7 @@
             this.Controls.Add(this.replaceField);
             this.Controls.Add(this.searchField);
             this.Controls.Add(this.richTextBox1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Form1";
             this.Text = "Form1";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);

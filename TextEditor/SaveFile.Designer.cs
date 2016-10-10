@@ -112,6 +112,7 @@
             this.Controls.Add(this.navField);
             this.Controls.Add(this.backButton);
             this.Controls.Add(this.navButton);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "SaveFile";
             this.Text = "Spara Som";
             this.ResumeLayout(false);

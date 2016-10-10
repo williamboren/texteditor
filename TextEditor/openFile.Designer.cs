@@ -44,7 +44,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.navField.Location = new System.Drawing.Point(13, 13);
             this.navField.Name = "navField";
-            this.navField.Size = new System.Drawing.Size(225, 20);
+            this.navField.Size = new System.Drawing.Size(224, 20);
             this.navField.TabIndex = 0;
             // 
             // navButton
@@ -65,7 +65,7 @@
             this.folderList.FormattingEnabled = true;
             this.folderList.Location = new System.Drawing.Point(13, 50);
             this.folderList.Name = "folderList";
-            this.folderList.Size = new System.Drawing.Size(148, 173);
+            this.folderList.Size = new System.Drawing.Size(147, 173);
             this.folderList.TabIndex = 2;
             this.folderList.SelectedIndexChanged += new System.EventHandler(this.folderList_SelectedIndexChanged);
             // 
@@ -97,7 +97,7 @@
             this.fileList.FormattingEnabled = true;
             this.fileList.Location = new System.Drawing.Point(167, 50);
             this.fileList.Name = "fileList";
-            this.fileList.Size = new System.Drawing.Size(142, 173);
+            this.fileList.Size = new System.Drawing.Size(141, 173);
             this.fileList.TabIndex = 5;
             this.fileList.SelectedIndexChanged += new System.EventHandler(this.fileList_SelectedIndexChanged);
             // 
@@ -115,7 +115,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(321, 261);
+            this.ClientSize = new System.Drawing.Size(320, 261);
             this.Controls.Add(this.backButton);
             this.Controls.Add(this.fileList);
             this.Controls.Add(this.cancelButton);
@@ -123,6 +123,7 @@
             this.Controls.Add(this.folderList);
             this.Controls.Add(this.navButton);
             this.Controls.Add(this.navField);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "OpenFile";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.Text = "Öppna";
