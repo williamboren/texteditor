@@ -15,7 +15,7 @@ namespace TextEditor
             // set the title of the program
             this.Text = "[Insert name]";
 
-            // set the default text color (stored settings might be implemented if I have time over for it)
+            // set the default text color (stored settings might be implemented if I have time for it)
             richTextBox1.ForeColor = Color.WhiteSmoke;
         }
 
@@ -83,7 +83,7 @@ namespace TextEditor
                 }
                 catch (ArgumentException ex)
                 {
-                    MessageBox.Show(ex.Message);
+                    MessageBox.Show(ex.Message, "Error");
                 }
             }
             else if (isFileSaved && openedFileName.Length > 0)
@@ -301,7 +301,6 @@ namespace TextEditor
                 if (index >= 0)
                 {
                     richTextBox1.Select(index, searchField.TextLength);
-                    richTextBox1.SelectionBackColor = Color.BlueViolet;
                 }
             }
         }
