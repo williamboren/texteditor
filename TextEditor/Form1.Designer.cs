@@ -165,6 +165,7 @@
             this.randomButton.TabIndex = 12;
             this.randomButton.Text = "RNG";
             this.randomButton.UseVisualStyleBackColor = true;
+            this.randomButton.Click += new System.EventHandler(this.randomButton_Click);
             // 
             // chooseFontSizeButton
             // 

@@ -301,6 +301,7 @@ namespace TextEditor
                 if (index >= 0)
                 {
                     richTextBox1.Select(index, searchField.TextLength);
+                    richTextBox1.Focus();
                 }
             }
         }
@@ -320,6 +321,55 @@ namespace TextEditor
                     // replace it with the value from the replace field
                     richTextBox1.SelectedText = replaceField.Text;
                 }
+            }
+        }
+
+        private void randomButton_Click(object sender, EventArgs e)
+        {
+            Random rng = new Random();
+            ColorConverter converter = new ColorConverter();
+            int selection = rng.Next(richTextBox1.Text.Length),
+                selectionLength = rng.Next(richTextBox1.Text.Length),
+                options = rng.Next(100);
+            string colorHex = String.Format("#{0:X6}", rng.Next(0x1000000));
+            Color color = (Color)converter.ConvertFromString(colorHex);
+
+            if (options <= 10)
+            {
+                richTextBox1.Select(selection, selectionLength);
+                richTextBox1.SelectionBackColor = color;
+            }
+            else if (options > 10 && options <= 20)
+            {
+
+            }
+            else if (options > 20 && options <= 30)
+            {
+
+            }
+            else if (options > 30 && options <= 40)
+            {
+
+            }
+            else if (options > 50 && options <= 60)
+            {
+
+            }
+            else if (options > 60 && options <= 70)
+            {
+
+            }
+            else if (options > 70 && options <= 80)
+            {
+
+            }
+            else if (options > 80 && options <= 90)
+            {
+
+            }
+            else if (options > 90 && options <= 100)
+            {
+
             }
         }
     }
