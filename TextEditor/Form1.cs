@@ -324,36 +324,62 @@ namespace TextEditor
             }
         }
 
-        private void randomButton_Click(object sender, EventArgs e)
+        // Method to generate a random color
+        private Color GenerateColor()
         {
             Random rng = new Random();
             ColorConverter converter = new ColorConverter();
-            int selection = rng.Next(richTextBox1.Text.Length),
-                selectionLength = rng.Next(richTextBox1.Text.Length),
-                options = rng.Next(100);
+            // generate a random Hex code and convert it to a color
             string colorHex = String.Format("#{0:X6}", rng.Next(0x1000000));
             Color color = (Color)converter.ConvertFromString(colorHex);
+            return color;
+        }
+
+        private void randomButton_Click(object sender, EventArgs e)
+        {
+            // Random class for generating random numbers
+            Random rng = new Random();
+
+            // Get 3 random ints, one for start index of selection and one for the length
+            // and the last one to decide between the different "random" actions
+            int selection = rng.Next(richTextBox1.Text.Length),
+                selectionLength = rng.Next(richTextBox1.Text.Length),
+                options = rng.Next(50, 60);
+
+            // select some text in the open document
+            richTextBox1.Select(selection, selectionLength);
 
             if (options <= 10)
             {
-                richTextBox1.Select(selection, selectionLength);
-                richTextBox1.SelectionBackColor = color;
+                // sets the text, background and form background to random colors
+                richTextBox1.SelectionColor = GenerateColor();
+                richTextBox1.SelectionBackColor = GenerateColor();
+                this.BackColor = GenerateColor();
             }
             else if (options > 10 && options <= 20)
             {
-
+                // sets the selected text to protected (can't edit anything in the selection)
+                richTextBox1.SelectionProtected = true; // :^)
+                MessageBox.Show(":^)", ":^)");
+                richTextBox1.Focus();
             }
             else if (options > 20 && options <= 30)
             {
-
+                // undoes all possible changes :^)
+                while (richTextBox1.CanUndo)
+                {
+                    richTextBox1.Undo();
+                }
             }
             else if (options > 30 && options <= 40)
             {
-
+                // minimize the window
+                this.WindowState = FormWindowState.Minimized;
             }
             else if (options > 50 && options <= 60)
             {
-
+                // this is pure evil
+                this.Hide();
             }
             else if (options > 60 && options <= 70)
             {
