@@ -280,6 +280,8 @@ namespace TextEditor
                 // get the index of the first occurance of the input
                 int index = richTextBox1.Find(searchField.Text), oldIndex = -1;
 
+                // where and why does selectionlength get a value??????????????????????????????????????
+
                 // if theres is an selection already and it matches the one we're goning to create its *probably* the selection from the last search of the same word
                 // save the index in oldIndex and use (oldIndex + searchinput length) as startindex for the next search
                 if (richTextBox1.SelectionLength == searchField.TextLength && richTextBox1.Find(searchField.Text) == index)
@@ -344,7 +346,7 @@ namespace TextEditor
             // and the last one to decide between the different "random" actions
             int selection = rng.Next(richTextBox1.Text.Length),
                 selectionLength = rng.Next(richTextBox1.Text.Length),
-                options = rng.Next(50, 60);
+                options = rng.Next(100);
 
             // select some text in the open document
             richTextBox1.Select(selection, selectionLength);
@@ -383,19 +385,24 @@ namespace TextEditor
             }
             else if (options > 60 && options <= 70)
             {
-
+                // quits the program :^)
+                this.Close();
             }
             else if (options > 70 && options <= 80)
             {
-
+                // I'm running out of ideas
+                randomButton.Hide();
+                richTextBox1.Hide();
             }
             else if (options > 80 && options <= 90)
             {
-
+                // self explainatory
+                richTextBox1.ResetText();
             }
             else if (options > 90 && options <= 100)
             {
-
+                // delete stored settings if its implemented 
+                // and/or don't save them the next time the user quits the program
             }
         }
     }
