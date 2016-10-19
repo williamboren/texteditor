@@ -107,6 +107,27 @@
   <ItemGroup>
     <None Include="Resources\saveButtonState3.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FKLfl7l.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\saveAsButton_state1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\saveAsButton_state2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\saveAsButton_state3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\searchButton_state1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\searchButton_state2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\searchButton_state3.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

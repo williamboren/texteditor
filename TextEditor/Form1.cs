@@ -66,7 +66,7 @@ namespace TextEditor
 
         private void saveButton_Click(object sender, EventArgs e)
         {
-            if ((openedFileName != null || openedFileName.Length > 0) && !isFileSaved)
+            if ((openedFileName.Length > 0) && !isFileSaved)
             {
                 try
                 {
@@ -272,39 +272,35 @@ namespace TextEditor
             saveButton.Image = Properties.Resources.saveButtonState3;
         }
 
+        // switch image based on mouse events
+        private void saveAsButton_MouseEnter(object sender, EventArgs e)
+        {
+            saveAsButton.Image = Properties.Resources.saveAsButton_state3;
+        }
+
+        private void saveAsButton_MouseLeave(object sender, EventArgs e)
+        {
+            saveAsButton.Image = Properties.Resources.saveAsButton_state2;
+        }
+
+        private void saveAsButton_MouseDown(object sender, MouseEventArgs e)
+        {
+            saveAsButton.Image = Properties.Resources.saveAsButton_state1;
+        }
+
+        private void saveAsButton_MouseUp(object sender, MouseEventArgs e)
+        {
+            saveAsButton.Image = Properties.Resources.saveAsButton_state3;
+        }
+
         private void searchButton_Click(object sender, EventArgs e)
         {
             // if the search field have a value
             if (searchField.Text != null && searchField.Text.Length > 0)
             {
-                // get the index of the first occurance of the input
-                int index = richTextBox1.Find(searchField.Text), oldIndex = -1;
-
-                // where and why does selectionlength get a value??????????????????????????????????????
-
-                // if theres is an selection already and it matches the one we're goning to create its *probably* the selection from the last search of the same word
-                // save the index in oldIndex and use (oldIndex + searchinput length) as startindex for the next search
-                if (richTextBox1.SelectionLength == searchField.TextLength && richTextBox1.Find(searchField.Text) == index)
-                {
-                    oldIndex = index;
-
-                    // stop being a bitch rtb, let me search with string + startindex without searchoptions
-                    // initiate a new char array and add each letter in the searchinput to it
-                    char[] search = new char[searchField.TextLength];
-
-                    for (int i = 0; i < searchField.TextLength; i++)
-                    {
-                        search[i] = searchField.Text[i];
-                    }
-
-                    index = richTextBox1.Find(search, oldIndex + searchField.Text.Length);
-                }
-
-                if (index >= 0)
-                {
-                    richTextBox1.Select(index, searchField.TextLength);
-                    richTextBox1.Focus();
-                }
+                // searches for any text matching the input and puts focus back on the textbox
+                richTextBox1.Find(searchField.Text);
+                richTextBox1.Focus();
             }
         }
 
@@ -391,7 +387,6 @@ namespace TextEditor
             else if (options > 70 && options <= 80)
             {
                 // I'm running out of ideas
-                randomButton.Hide();
                 richTextBox1.Hide();
             }
             else if (options > 80 && options <= 90)
@@ -404,6 +399,26 @@ namespace TextEditor
                 // delete stored settings if its implemented 
                 // and/or don't save them the next time the user quits the program
             }
+        }
+
+        private void searchButton_MouseDown(object sender, MouseEventArgs e)
+        {
+            searchButton.Image = Properties.Resources.searchButton_state1;
+        }
+
+        private void searchButton_MouseEnter(object sender, EventArgs e)
+        {
+            searchButton.Image = Properties.Resources.searchButton_state3;
+        }
+
+        private void searchButton_MouseLeave(object sender, EventArgs e)
+        {
+            searchButton.Image = Properties.Resources.searchButton_state2;
+        }
+
+        private void searchButton_MouseUp(object sender, MouseEventArgs e)
+        {
+            searchButton.Image = Properties.Resources.searchButton_state3;
         }
     }
 }

@@ -63,6 +63,46 @@ namespace TextEditor.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap FKLfl7l {
+            get {
+                object obj = ResourceManager.GetObject("FKLfl7l", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap saveAsButton_state1 {
+            get {
+                object obj = ResourceManager.GetObject("saveAsButton_state1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap saveAsButton_state2 {
+            get {
+                object obj = ResourceManager.GetObject("saveAsButton_state2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap saveAsButton_state3 {
+            get {
+                object obj = ResourceManager.GetObject("saveAsButton_state3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap saveButtonState1 {
             get {
                 object obj = ResourceManager.GetObject("saveButtonState1", resourceCulture);
@@ -86,6 +126,36 @@ namespace TextEditor.Properties {
         internal static System.Drawing.Bitmap saveButtonState3 {
             get {
                 object obj = ResourceManager.GetObject("saveButtonState3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap searchButton_state1 {
+            get {
+                object obj = ResourceManager.GetObject("searchButton_state1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap searchButton_state2 {
+            get {
+                object obj = ResourceManager.GetObject("searchButton_state2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap searchButton_state3 {
+            get {
+                object obj = ResourceManager.GetObject("searchButton_state3", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
