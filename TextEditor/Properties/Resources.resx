@@ -118,34 +118,67 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="saveAsButton_state3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\saveAsButton_state3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="FKLfl7l" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\FKLfl7l.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="fontSizeButton_state3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\fontSizeButton_state3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="saveAsButton_state1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\saveAsButton_state1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="fontSizeButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\fontSizeButton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="fontSizeButton_state2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\fontSizeButton_state2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="newButton_state2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\newButton_state2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="replaceButton_state2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\replaceButton_state2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="newButton_state3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\newButton_state3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="saveButtonState3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\saveButtonState3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="FKLfl7l" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\FKLfl7l.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="saveAsButton_state3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\saveAsButton_state3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="searchButton_state3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\searchButton_state3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="replaceButton_state3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\replaceButton_state3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="saveButtonState2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\saveButtonState2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="saveButtonState1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\saveButtonState1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="saveAsButton_state2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\saveAsButton_state2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="searchButton_state1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\searchButton_state1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="searchButton_state2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\searchButton_state2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="searchButton_state3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\searchButton_state3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="newButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\newButton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="replaceButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\replaceButton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="saveButtonState1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\saveButtonState1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="searchButton_state1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\searchButton_state1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="fontSelectionButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\fontSelectionButton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="fontSelectionButton_state2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\fontSelectionButton_state2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

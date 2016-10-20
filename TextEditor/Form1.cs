@@ -13,10 +13,16 @@ namespace TextEditor
             InitializeComponent();
 
             // set the title of the program
-            this.Text = "[Insert name]";
+            this.Text = "TextPro";
 
             // set the default text color (stored settings might be implemented if I have time for it)
             richTextBox1.ForeColor = Color.WhiteSmoke;
+
+            // set the cursor to the normal arrow
+            fontSelectionTextBox.Cursor = Cursors.Arrow;
+
+            fontSelectionTextBox.Text = richTextBox1.Font.Name;
+            fontSizeValue.Value = (decimal)richTextBox1.Font.Size;
         }
 
         bool isFileSaved = true;
@@ -213,25 +219,42 @@ namespace TextEditor
 
         private void chooseFontButton_Click(object sender, EventArgs e)
         {
-            // show the font diaglog and wait for the result
-            if (fontDialog1.ShowDialog() == DialogResult.OK)
+            try
             {
-                // if the user have selected text before pressing the button, apply the font to the selected text
-                if (richTextBox1.SelectedText.Length > 0)
+                // show the font diaglog and wait for the result
+                if (fontDialog1.ShowDialog() == DialogResult.OK)
                 {
-                    richTextBox1.SelectionFont = fontDialog1.Font;
+                    fontSelectionTextBox.Text = fontDialog1.Font.Name;
+                    // if the user have selected text before pressing the button, apply the font to the selected text
+                    if (richTextBox1.SelectedText.Length > 0)
+                    {
+                        richTextBox1.SelectionFont = fontDialog1.Font;
+                    }
+                    // else apply it to all the text in the document
+                    else
+                    {
+                        richTextBox1.Font = fontDialog1.Font;
+                    }
                 }
-                // else apply it to all the text in the document
-                else
-                {
-                    richTextBox1.Font = fontDialog1.Font;
-                }
+            } catch (ArgumentException exception)
+            {
+
+                MessageBox.Show(exception.Message, "Error");
             }
         }
 
-        private void chooseFontSizeButton_Click(object sender, EventArgs e)
+        private void fontSizeButton_Click(object sender, EventArgs e)
         {
-            // Hmm, richTextBox1.Font.Size is get only... How do I solve this??
+            float size = (float)fontSizeValue.Value;
+
+            if (richTextBox1.SelectionLength > 0)
+            {
+                richTextBox1.SelectionFont = new Font(richTextBox1.Font.Name, size);
+            }
+            else
+            {
+                richTextBox1.Font = new Font(richTextBox1.Font.Name, size);
+            }
         }
 
         private void chooseColorButton_Click(object sender, EventArgs e)
@@ -419,6 +442,76 @@ namespace TextEditor
         private void searchButton_MouseUp(object sender, MouseEventArgs e)
         {
             searchButton.Image = Properties.Resources.searchButton_state3;
+        }
+
+        private void replaceButton_MouseDown(object sender, MouseEventArgs e)
+        {
+            replaceButton.Image = Properties.Resources.replaceButton_state3;
+        }
+
+        private void replaceButton_MouseEnter(object sender, EventArgs e)
+        {
+            replaceButton.Image = Properties.Resources.replaceButton_state2;
+        }
+
+        private void relpaceButton_MouseLeave(object sender, EventArgs e)
+        {
+            replaceButton.Image = Properties.Resources.replaceButton;
+        }
+
+        private void replaceButton_MouseUp(object sender, MouseEventArgs e)
+        {
+            replaceButton.Image = Properties.Resources.replaceButton_state2;
+        }
+
+        private void newButton_MouseDown(object sender, MouseEventArgs e)
+        {
+            newButton.Image = Properties.Resources.newButton_state3;
+        }
+
+        private void newButton_MouseEnter(object sender, EventArgs e)
+        {
+            newButton.Image = Properties.Resources.newButton_state2;
+        }
+
+        private void newButton_MouseLeave(object sender, EventArgs e)
+        {
+            newButton.Image = Properties.Resources.newButton;
+        }
+
+        private void newButton_MouseUp(object sender, MouseEventArgs e)
+        {
+            newButton.Image = Properties.Resources.newButton_state2;
+        }
+
+        private void fontSizeButton_MouseDown(object sender, MouseEventArgs e)
+        {
+            fontSizeButton.Image = Properties.Resources.fontSizeButton_state3;
+        }
+
+        private void fontSizeButton_MouseEnter(object sender, EventArgs e)
+        {
+            fontSizeButton.Image = Properties.Resources.fontSizeButton_state2;
+        }
+
+        private void fontSizeButton_MouseLeave(object sender, EventArgs e)
+        {
+            fontSizeButton.Image = Properties.Resources.fontSizeButton;
+        }
+
+        private void fontSizeButton_MouseUp(object sender, MouseEventArgs e)
+        {
+            fontSizeButton.Image = Properties.Resources.fontSizeButton_state2;
+        }
+
+        private void fontSelectionButton_MouseEnter(object sender, EventArgs e)
+        {
+            fontSelectionButton.Image = Properties.Resources.fontSelectionButton_state2;
+        }
+
+        private void fontSelectionButton_MouseLeave(object sender, EventArgs e)
+        {
+            fontSelectionButton.Image = Properties.Resources.fontSelectionButton;
         }
     }
 }
