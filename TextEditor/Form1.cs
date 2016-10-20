@@ -49,7 +49,7 @@ namespace TextEditor
                 richTextBox1.LoadFile(openedFileName, ext == ".txt" ? RichTextBoxStreamType.PlainText : RichTextBoxStreamType.RichText);
                 // one line magic :D (maybe use if/elseif/else to handle other filetypes?)
                 isFileSaved = true;
-                this.Text = title + " " + Path.GetFileName(openedFileName);
+                this.Text = title + " - " + Path.GetFileName(openedFileName);
                 richTextBox1.Enabled = true;
             }
             catch (IOException ex)
@@ -149,7 +149,7 @@ namespace TextEditor
             openedFileName = String.Empty;
             isFileSaved = true;
             richTextBox1.Clear();
-            this.Text = title + " Ny Fil";
+            this.Text = title + " - Ny Fil";
             richTextBox1.Enabled = true;
         }
 
@@ -512,6 +512,46 @@ namespace TextEditor
         private void fontSelectionButton_MouseLeave(object sender, EventArgs e)
         {
             fontSelectionButton.Image = Properties.Resources.fontSelectionButton;
+        }
+
+        private void colorButton_MouseLeave(object sender, EventArgs e)
+        {
+            colorButton.Image = Properties.Resources.colorButton;
+        }
+
+        private void colorButton_MouseUp(object sender, MouseEventArgs e)
+        {
+            colorButton.Image = Properties.Resources.colorButton_state2;
+        }
+
+        private void colorButton_MouseEnter(object sender, EventArgs e)
+        {
+            colorButton.Image = Properties.Resources.colorButton_state2;
+        }
+
+        private void colorButton_MouseDown(object sender, MouseEventArgs e)
+        {
+            colorButton.Image = Properties.Resources.colorButton_state3;
+        }
+
+        private void exitButton_MouseLeave(object sender, EventArgs e)
+        {
+            exitButton.Image = Properties.Resources.exitButton;
+        }
+
+        private void exitButton_MouseUp(object sender, MouseEventArgs e)
+        {
+            exitButton.Image = Properties.Resources.exitButton_state2;
+        }
+
+        private void exitButton_MouseEnter(object sender, EventArgs e)
+        {
+            exitButton.Image = Properties.Resources.exitButton_state2;
+        }
+
+        private void exitButton_MouseDown(object sender, MouseEventArgs e)
+        {
+            exitButton.Image = Properties.Resources.exitButton_state3;
         }
     }
 }

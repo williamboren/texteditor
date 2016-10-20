@@ -33,11 +33,11 @@
             this.searchField = new System.Windows.Forms.TextBox();
             this.replaceField = new System.Windows.Forms.TextBox();
             this.openButton = new System.Windows.Forms.Button();
-            this.chooseColorButton = new System.Windows.Forms.Button();
-            this.exitButton = new System.Windows.Forms.Button();
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             this.fontDialog1 = new System.Windows.Forms.FontDialog();
             this.fontSelectionTextBox = new System.Windows.Forms.TextBox();
+            this.fontSizeValue = new System.Windows.Forms.NumericUpDown();
+            this.colorButton = new System.Windows.Forms.PictureBox();
             this.fontSelectionButton = new System.Windows.Forms.PictureBox();
             this.fontSizeButton = new System.Windows.Forms.PictureBox();
             this.newButton = new System.Windows.Forms.PictureBox();
@@ -46,7 +46,9 @@
             this.saveAsButton = new System.Windows.Forms.PictureBox();
             this.rngButton = new System.Windows.Forms.PictureBox();
             this.saveButton = new System.Windows.Forms.PictureBox();
-            this.fontSizeValue = new System.Windows.Forms.NumericUpDown();
+            this.exitButton = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.fontSizeValue)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.colorButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fontSelectionButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fontSizeButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.newButton)).BeginInit();
@@ -55,7 +57,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.saveAsButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rngButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.saveButton)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.fontSizeValue)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.exitButton)).BeginInit();
             this.SuspendLayout();
             // 
             // richTextBox1
@@ -98,32 +100,12 @@
             this.openButton.UseVisualStyleBackColor = true;
             this.openButton.Click += new System.EventHandler(this.openButton_Click);
             // 
-            // chooseColorButton
-            // 
-            this.chooseColorButton.Location = new System.Drawing.Point(948, 12);
-            this.chooseColorButton.Name = "chooseColorButton";
-            this.chooseColorButton.Size = new System.Drawing.Size(42, 23);
-            this.chooseColorButton.TabIndex = 10;
-            this.chooseColorButton.Text = "Färg";
-            this.chooseColorButton.UseVisualStyleBackColor = true;
-            this.chooseColorButton.Click += new System.EventHandler(this.chooseColorButton_Click);
-            // 
-            // exitButton
-            // 
-            this.exitButton.Location = new System.Drawing.Point(996, 12);
-            this.exitButton.Name = "exitButton";
-            this.exitButton.Size = new System.Drawing.Size(52, 23);
-            this.exitButton.TabIndex = 11;
-            this.exitButton.Text = "Avsluta";
-            this.exitButton.UseVisualStyleBackColor = true;
-            this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
-            // 
             // fontSelectionTextBox
             // 
             this.fontSelectionTextBox.BackColor = System.Drawing.Color.Gray;
             this.fontSelectionTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.fontSelectionTextBox.ForeColor = System.Drawing.SystemColors.Window;
-            this.fontSelectionTextBox.Location = new System.Drawing.Point(852, 12);
+            this.fontSelectionTextBox.Location = new System.Drawing.Point(853, 12);
             this.fontSelectionTextBox.Name = "fontSelectionTextBox";
             this.fontSelectionTextBox.ReadOnly = true;
             this.fontSelectionTextBox.Size = new System.Drawing.Size(72, 13);
@@ -133,6 +115,30 @@
             this.fontSelectionTextBox.Click += new System.EventHandler(this.chooseFontButton_Click);
             this.fontSelectionTextBox.MouseEnter += new System.EventHandler(this.fontSelectionButton_MouseEnter);
             this.fontSelectionTextBox.MouseLeave += new System.EventHandler(this.fontSelectionButton_MouseLeave);
+            // 
+            // fontSizeValue
+            // 
+            this.fontSizeValue.BackColor = System.Drawing.Color.Gray;
+            this.fontSizeValue.ForeColor = System.Drawing.SystemColors.Window;
+            this.fontSizeValue.Location = new System.Drawing.Point(710, 10);
+            this.fontSizeValue.Name = "fontSizeValue";
+            this.fontSizeValue.Size = new System.Drawing.Size(65, 20);
+            this.fontSizeValue.TabIndex = 24;
+            // 
+            // colorButton
+            // 
+            this.colorButton.Image = global::TextEditor.Properties.Resources.colorButton;
+            this.colorButton.Location = new System.Drawing.Point(948, 3);
+            this.colorButton.Name = "colorButton";
+            this.colorButton.Size = new System.Drawing.Size(47, 32);
+            this.colorButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.colorButton.TabIndex = 25;
+            this.colorButton.TabStop = false;
+            this.colorButton.Click += new System.EventHandler(this.chooseColorButton_Click);
+            this.colorButton.MouseDown += new System.Windows.Forms.MouseEventHandler(this.colorButton_MouseDown);
+            this.colorButton.MouseEnter += new System.EventHandler(this.colorButton_MouseEnter);
+            this.colorButton.MouseLeave += new System.EventHandler(this.colorButton_MouseLeave);
+            this.colorButton.MouseUp += new System.Windows.Forms.MouseEventHandler(this.colorButton_MouseUp);
             // 
             // fontSelectionButton
             // 
@@ -249,14 +255,20 @@
             this.saveButton.MouseLeave += new System.EventHandler(this.saveButton_MouseLeave);
             this.saveButton.MouseUp += new System.Windows.Forms.MouseEventHandler(this.saveButton_MouseUp);
             // 
-            // fontSizeValue
+            // exitButton
             // 
-            this.fontSizeValue.BackColor = System.Drawing.Color.Gray;
-            this.fontSizeValue.ForeColor = System.Drawing.SystemColors.Window;
-            this.fontSizeValue.Location = new System.Drawing.Point(710, 10);
-            this.fontSizeValue.Name = "fontSizeValue";
-            this.fontSizeValue.Size = new System.Drawing.Size(65, 20);
-            this.fontSizeValue.TabIndex = 24;
+            this.exitButton.Image = global::TextEditor.Properties.Resources.exitButton;
+            this.exitButton.Location = new System.Drawing.Point(1001, 3);
+            this.exitButton.Name = "exitButton";
+            this.exitButton.Size = new System.Drawing.Size(47, 32);
+            this.exitButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.exitButton.TabIndex = 26;
+            this.exitButton.TabStop = false;
+            this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
+            this.exitButton.MouseDown += new System.Windows.Forms.MouseEventHandler(this.exitButton_MouseDown);
+            this.exitButton.MouseEnter += new System.EventHandler(this.exitButton_MouseEnter);
+            this.exitButton.MouseLeave += new System.EventHandler(this.exitButton_MouseLeave);
+            this.exitButton.MouseUp += new System.Windows.Forms.MouseEventHandler(this.exitButton_MouseUp);
             // 
             // Form1
             // 
@@ -264,6 +276,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(119)))), ((int)(((byte)(123)))));
             this.ClientSize = new System.Drawing.Size(1060, 702);
+            this.Controls.Add(this.exitButton);
+            this.Controls.Add(this.colorButton);
             this.Controls.Add(this.fontSizeValue);
             this.Controls.Add(this.fontSelectionTextBox);
             this.Controls.Add(this.fontSelectionButton);
@@ -274,8 +288,6 @@
             this.Controls.Add(this.saveAsButton);
             this.Controls.Add(this.rngButton);
             this.Controls.Add(this.saveButton);
-            this.Controls.Add(this.exitButton);
-            this.Controls.Add(this.chooseColorButton);
             this.Controls.Add(this.openButton);
             this.Controls.Add(this.replaceField);
             this.Controls.Add(this.searchField);
@@ -284,6 +296,8 @@
             this.Name = "Form1";
             this.Text = "Form1";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
+            ((System.ComponentModel.ISupportInitialize)(this.fontSizeValue)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.colorButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fontSelectionButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fontSizeButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.newButton)).EndInit();
@@ -292,7 +306,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.saveAsButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rngButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.saveButton)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.fontSizeValue)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.exitButton)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -304,8 +318,6 @@
         private System.Windows.Forms.TextBox searchField;
         private System.Windows.Forms.TextBox replaceField;
         private System.Windows.Forms.Button openButton;
-        private System.Windows.Forms.Button chooseColorButton;
-        private System.Windows.Forms.Button exitButton;
         private System.Windows.Forms.ColorDialog colorDialog1;
         private System.Windows.Forms.FontDialog fontDialog1;
         private System.Windows.Forms.PictureBox saveButton;
@@ -318,6 +330,8 @@
         private System.Windows.Forms.PictureBox fontSelectionButton;
         private System.Windows.Forms.TextBox fontSelectionTextBox;
         private System.Windows.Forms.NumericUpDown fontSizeValue;
+        private System.Windows.Forms.PictureBox colorButton;
+        private System.Windows.Forms.PictureBox exitButton;
     }
 }
 
