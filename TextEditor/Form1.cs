@@ -249,11 +249,11 @@ namespace TextEditor
 
             if (richTextBox1.SelectionLength > 0)
             {
-                richTextBox1.SelectionFont = new Font(richTextBox1.Font.Name, size);
+                richTextBox1.SelectionFont = new Font(richTextBox1.Font.FontFamily, size, richTextBox1.Font.Style);
             }
             else
             {
-                richTextBox1.Font = new Font(richTextBox1.Font.Name, size);
+                richTextBox1.Font = new Font(richTextBox1.Font.FontFamily, size, richTextBox1.Font.Style);
             }
         }
 
