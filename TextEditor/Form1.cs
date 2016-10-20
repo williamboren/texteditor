@@ -13,7 +13,7 @@ namespace TextEditor
             InitializeComponent();
 
             // set the title of the program
-            this.Text = "TextPro";
+            this.Text = title;
 
             // set the default text color (stored settings might be implemented if I have time for it)
             richTextBox1.ForeColor = Color.WhiteSmoke;
@@ -24,7 +24,7 @@ namespace TextEditor
             fontSelectionTextBox.Text = richTextBox1.Font.Name;
             fontSizeValue.Value = (decimal)richTextBox1.Font.Size;
         }
-
+        string title = "TextPro";
         bool isFileSaved = true;
         string openedFileName;
         OpenFile openDiag;
@@ -49,7 +49,7 @@ namespace TextEditor
                 richTextBox1.LoadFile(openedFileName, ext == ".txt" ? RichTextBoxStreamType.PlainText : RichTextBoxStreamType.RichText);
                 // one line magic :D (maybe use if/elseif/else to handle other filetypes?)
                 isFileSaved = true;
-                this.Text = Path.GetFileName(openedFileName);
+                this.Text = title + " " + Path.GetFileName(openedFileName);
                 richTextBox1.Enabled = true;
             }
             catch (IOException ex)
@@ -149,7 +149,7 @@ namespace TextEditor
             openedFileName = String.Empty;
             isFileSaved = true;
             richTextBox1.Clear();
-            this.Text = "Ny Fil";
+            this.Text = title + " Ny Fil";
             richTextBox1.Enabled = true;
         }
 
